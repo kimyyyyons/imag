@@ -1,0 +1,850 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/* roboto/anton(logo) */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/*공통 CSS*/
+/*클리어픽스 : 플롯해제 클래스*/
+.cf:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/*접근성관련 html 태그 숨김 클래스*/
+.blind {
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/*지정 너비를 사용하게 하는 클래스*/
+.container {
+  width: 1132px;
+  width: 90%;
+  max-width: 1132px;
+  margin: 0 auto;
+}
+
+/*제목 스타일*/
+.sec_title {
+  font-size: 42px;
+  color: #000;
+}
+
+/*구분선 영역 스타일*/
+.divider {
+  width: 90%;
+  max-width: 1132px;
+  margin: 0 auto;
+  margin-top: 80px;
+  background: #eee;
+}
+
+.m_divider {
+  width: 20px;
+  margin: 0 auto;
+  margin-top: 80px;
+  background: #000;
+}
+
+/*모바일용 미디어쿼리 없음(공통 CSS로 사용)*/
+/*1. 헤더영역*/
+.header {
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/*로고*/
+.header .logo {
+  font-family: 'Anton', sans-serif;
+}
+
+.header .logo a {
+  font-size: 26px;
+  color: #000;
+}
+
+/*GNB메뉴*/
+.header nav {
+}
+
+.header .gnb {
+  width: 100%;
+  background: #000;
+  /*포지션*/
+  position: absolute;
+  left: 0;
+  top: 100%;
+  /*모바일 로딩시 숨김*/
+  display: none;
+}
+
+.header .gnb li {
+  border-bottom: 1px solid #fff;
+  padding: 5px 0;
+}
+
+.header .gnb li a {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  padding: 14px 0 14px 5%;
+}
+
+/*헴버거 메뉴*/
+.header .menu_toggle_btn {
+  width: 20px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.header .menu_toggle_btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+.header .menu_toggle_btn span:nth-child(2) {
+  margin: 5px 0;
+}
+
+/*2. 슬라이드 영역*/
+.slider .slider_img {
+  max-width: 100%;
+  width: 100%;
+}
+
+.slider .slider_img img {
+  max-width: 100%;
+  width: 100%;
+}
+
+/*3-1. 디스플레이 영역*/
+.content {
+}
+
+.display_section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.display_section .sec_title {
+  margin-bottom: 30px;
+}
+
+.display_section .desc {
+  color: #616161;
+  line-height: 2;
+}
+
+/*3-2. 프로모션 영역*/
+.promotion_section {
+  margin-top: 68px;
+}
+
+.promotion_section .promotion_list li {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.promotion_section .promotion_list li a {
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.promotion_section .promotion_list li a:hover {
+  opacity: 0.5;
+}
+
+.promotion_section .promotion_list li:nth-child(1) {
+  margin-top: 0;
+}
+
+.promotion_section .promotion_list li img {
+  height: 52px;
+}
+
+.promotion_section .promotion_list li h3 {
+  margin: 30px 0 20px;
+  color: #000;
+}
+
+.promotion_section .promotion_list li p {
+  font-size: 14px;
+  color: #616161;
+  line-height: 1.5;
+  font-family: 'PT Serif', serif;
+}
+
+/*3-3. 최근 작업영역*/
+.work_section {
+  margin-top: 74px;
+}
+
+.work_section .sec_title {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.work_section .work_list {
+}
+
+.work_section .work_list li {
+  width: 100%;
+}
+
+.work_section .work_list li a {
+  width: 100%;
+}
+
+.work_section .work_list li img {
+  width: 100%;
+}
+
+/*3-4. 블로그 작업영역*/
+.blog_section {
+  margin-top: 80px;
+}
+
+.blog_section .sec_title {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.blog_section .blog_list {
+}
+
+.blog_section .blog_list li {
+  margin-top: 48px;
+  width: 100%;
+}
+
+.blog_section .blog_list li:nth-child(1) {
+  margin-top: 0;
+}
+
+.blog_section .blog_list li img {
+  max-width: 100%;
+  width: 100%;
+}
+
+.blog_section .blog_list li small {
+  display: block;
+  font-size: 12px;
+  color: #9e9e9e;
+  margin: 10px 0;
+}
+
+.blog_section .blog_list li h3 {
+  color: #424242;
+  line-height: 1.6;
+}
+
+/*3-5. 연락처작업영역*/
+.contact_section {
+  margin-top: 100px;
+}
+
+.contact_section .sec_title {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+/*input요소*/
+.contact_section .form_box .form input {
+  padding-bottom: 14px;
+  margin-bottom: 40px;
+}
+
+.contact_section .form_box .texta textarea {
+  height: 170px;
+}
+
+/*버튼*/
+.contact_section .form_box .send_btn {
+  margin-top: 36px;
+  text-align: right;
+}
+
+.contact_section .form_box .send_btn button {
+  font-size: 12px;
+  color: #fff;
+  background: #000;
+  font-family: 'Roboto', sans-serif;
+  padding: 15px;
+  border: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.contact_section .form_box .send_btn button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*4. 푸터영역*/
+.footer {
+  margin-top: 100px;
+}
+
+.footer iframe {
+  width: 100%;
+  height: 320px;
+}
+
+.footer p {
+  margin: 20px 0;
+  color: #000;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/*트랜지션 애니메이션 효과*/
+.work_section .work_list li {
+  position: relative;
+}
+
+.work_section .work_list li a:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /*포지션*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #000;
+  content: '';
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.work_section .work_list li a:hover:before {
+  opacity: 0.5;
+}
+
+.work_section .work_list li div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 40%;
+  text-align: center;
+  z-index: 200;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.work_section .work_list li a:hover div {
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.work_section .work_list li div h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.work_section .work_list li div span {
+  font-size: 11px;
+  color: #fff;
+}
+
+/*태블릿용 미디어쿼리(768px이상)*/
+@media screen and (min-width: 768px) {
+  /*1. 헤더영역*/
+  .header {
+    padding: 18px 5%;
+    position: relative;
+  }
+
+  /*로고*/
+  .header .logo {
+  }
+
+  .header .logo a {
+    font-size: 26px;
+    color: #000;
+  }
+
+  /*GNB메뉴*/
+  .header nav {
+  }
+
+  .header .gnb {
+    /* GNB메뉴 보이기 */
+    display: block;
+    display: flex;
+    width: auto;
+    background: none;
+    position: static;
+  }
+
+  .header .gnb li {
+    /*보더값 수정*/
+    border-bottom: 0;
+    margin-left: 20px;
+  }
+
+  .header .gnb li a {
+    display: inline-block;
+    flex-direction: row;
+    color: #000;
+    /*폰트크기 수정*/
+    font-size: 16px;
+    /*패딩값 수정*/
+    padding: 0;
+    padding-top: 5px;
+  }
+
+  /*헴버거 메뉴*/
+  .header .menu_toggle_btn {
+    display: none;
+  }
+
+  /*3-1. 디스플레이 영역*/
+  .display_section {
+    /*값 수정*/
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .display_section .sec_title {
+    margin-bottom: 30px;
+  }
+
+  .display_section .desc {
+    color: #616161;
+    line-height: 2;
+  }
+
+  /*3-2. 프로모션 영역*/
+  .promotion_section {
+    /*값 수정*/
+    margin-top: 110px;
+  }
+
+  .promotion_section .promotion_list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .promotion_section .promotion_list li {
+    /*값 수정*/
+    margin-top: 0;
+    width: 177px;
+    /*(177/768)*100*/
+    width: 23.046875%;
+    margin-left: 20px;
+    /*(20/768)*100*/
+    margin-left: 2.604166666666667%;
+    text-align: center;
+  }
+
+  .promotion_section .promotion_list li:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .promotion_section .promotion_list li img {
+    height: 52px;
+  }
+
+  .promotion_section .promotion_list li h3 {
+    margin: 30px 0 20px;
+    color: #000;
+  }
+
+  .promotion_section .promotion_list li p {
+    font-size: 14px;
+    color: #616161;
+    line-height: 1.5;
+    font-family: 'PT Serif', serif;
+  }
+
+  /*3-3. 최근 작업영역*/
+  .work_section {
+    /*값 수정*/
+    margin-top: 100px;
+  }
+
+  .work_section .sec_title {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    /*값 수정*/
+    margin-bottom: 80px;
+  }
+
+  .work_section .work_list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .work_section .work_list li {
+    /* 값 수정 */
+    width: 50%;
+  }
+
+  .work_section .work_list li a {
+    width: 100%;
+  }
+
+  .work_section .work_list li img {
+    width: 100%;
+  }
+
+  /*3-4. 블로그 작업영역*/
+  .blog_section {
+    /*값 수정*/
+    margin-top: 124px;
+  }
+
+  .blog_section .sec_title {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .blog_section .blog_list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .blog_section .blog_list li {
+    /*값 수정*/
+    margin-top: 0;
+    width: 100%;
+    /*(728/3=242.6666666666667px)*/
+    /*(242.6666666666667/768)*100*/
+    width: 31.59722222222223%;
+    margin-left: 20px;
+    margin-left: 2.604166666666667%;
+    /*(20/768)*100*/
+  }
+
+  .blog_section .blog_list li:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .blog_section .blog_list li img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .blog_section .blog_list li time {
+    display: block;
+    font-size: 12px;
+    color: #9e9e9e;
+    margin: 10px 0;
+  }
+
+  .blog_section .blog_list li h3 {
+    color: #424242;
+    line-height: 1.6;
+  }
+
+  /*3-5. 연락처작업영역*/
+  .contact_section {
+    /*값 수정*/
+    margin-top: 180px;
+  }
+
+  .contact_section .sec_title {
+    /*값 수정*/
+    margin-bottom: 80px;
+    text-align: center;
+  }
+
+  .contact_section .form_box .form {
+    /*(374/768)*100*/
+    width: 374px;
+    width: 48.69791666666667%;
+    /*(20/768)*100*/
+    margin-right: 20px;
+    margin-right: 2.604166666666667%;
+    float: left;
+  }
+
+  /*input요소*/
+  .contact_section .form_box .form input {
+    padding-bottom: 14px;
+    margin-bottom: 40px;
+  }
+
+  .contact_section .form_box .texta {
+    /*(374/768)*100*/
+    width: 374px;
+    width: 48.69791666666667%;
+    float: right;
+  }
+
+  .contact_section .form_box .texta textarea {
+    height: 170px;
+  }
+
+  /*버튼*/
+  .contact_section .form_box .send_btn {
+    margin-top: 36px;
+    text-align: right;
+  }
+
+  .contact_section .form_box .send_btn button {
+    font-size: 12px;
+    color: #fff;
+    background: #000000;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+/*PC용 미디어쿼리(1132px이상)*/
+@media screen and (min-width: 1132px) {
+  /*3-1. 디스플레이 영역*/
+  .display_section div {
+    display: flex;
+    justify-content: space-between;
+    /*값 수정*/
+    margin-top: 100px;
+    text-align: left;
+  }
+
+  .display_section .sec_title {
+    /*값 수정*/
+    margin-bottom: 0;
+  }
+
+  .display_section .desc {
+    color: #616161;
+    line-height: 2;
+    /*포지션*/
+    position: relative;
+    padding-left: 20px;
+  }
+
+  /*데코레이션 세로선*/
+  .display_section .desc:before {
+    display: block;
+    content: '';
+    width: 2px;
+    height: 44px;
+    background: #e0e0e0;
+    /*포지션*/
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  /*3-2. 프로모션 영역*/
+  .promotion_section {
+    /*값 수정*/
+    margin-top: 110px;
+  }
+
+  .promotion_section .promotion_list li {
+    /*값 수정*/
+    margin-top: 0;
+    width: 268px;
+    /*(268/1132)*100*/
+    width: 23.67491166077739%;
+    margin-left: 20px;
+    /*(20/1132)*100*/
+    margin-left: 1.76678445229682%;
+    text-align: center;
+  }
+
+  .promotion_section .promotion_list li:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .promotion_section .promotion_list li img {
+    height: 52px;
+  }
+
+  .promotion_section .promotion_list li h3 {
+    margin: 30px 0 20px;
+    color: #000;
+  }
+
+  .promotion_section .promotion_list li p {
+    font-size: 14px;
+    color: #616161;
+    line-height: 1.5;
+    font-family: 'PT Serif', serif;
+  }
+
+  /*3-3. 최근 작업영역*/
+  .work_section {
+    /*값 수정*/
+    margin-top: 100px;
+  }
+
+  .work_section .sec_title {
+    width: 90%;
+    /*값 수정*/
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    /*값 수정*/
+    margin-bottom: 80px;
+  }
+
+  .work_section .work_list {
+  }
+
+  .work_section .work_list li {
+    /*값 수정*/
+    width: 25%;
+    float: left;
+  }
+
+  .work_section .work_list li a {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .work_section .work_list li img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /*3-4. 블로그 작업영역*/
+  .blog_section {
+    /*값 수정*/
+    margin-top: 124px;
+  }
+
+  .blog_section .sec_title {
+    /*값 수정*/
+    margin-bottom: 0;
+    /*text-align: center;*/
+    /*width: 288px;*/
+    float: left;
+  }
+
+  .blog_section .blog_list {
+    float: right;
+    width: 844px;
+    /*(844/1132)*100*/
+    width: 74.5583038869258%;
+  }
+
+  .blog_section .blog_list li {
+    /*값 수정*/
+    margin-top: 0;
+    width: 100%;
+    /*(844-40/3=268px)*/
+    /*(268/844)*100*/
+    width: 31.75355450236967%;
+    margin-left: 20px;
+    margin-left: 2.369668246445498%;
+    /*(20/768)*100*/
+    float: left;
+  }
+
+  .blog_section .blog_list li:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .blog_section .blog_list li img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .blog_section .blog_list li time {
+    display: block;
+    font-size: 12px;
+    color: #9e9e9e;
+    margin: 10px 0;
+  }
+
+  .blog_section .blog_list li h3 {
+    color: #424242;
+    line-height: 1.6;
+  }
+
+  /*3-5. 연락처작업영역*/
+  .contact_section {
+    /*값 수정*/
+    margin-top: 180px;
+  }
+
+  .contact_section .sec_title {
+    /*값 수정*/
+    margin-bottom: 0;
+    /*text-align: center;*/
+    float: left;
+    /*width: 288px;*/
+  }
+
+  .contact_section .form_box {
+    /*(844/1132)*100*/
+    width: 844px;
+    width: 74.5583038869258%;
+    float: right;
+  }
+
+  .contact_section .form_box .form {
+    /*(412/844)*100*/
+    width: 412px;
+    width: 48.81516587677725%;
+    /*(20/844)*100*/
+    margin-right: 20px;
+    margin-right: 2.369668246445498%;
+    float: left;
+  }
+
+  /*input요소*/
+  .contact_section .form_box .form input {
+    padding-bottom: 14px;
+    margin-bottom: 40px;
+  }
+
+  .contact_section .form_box .texta {
+    /*(412/844)*100*/
+    width: 412px;
+    width: 48.81516587677725%;
+    float: right;
+  }
+
+  .contact_section .form_box .texta textarea {
+    height: 170px;
+  }
+
+  /*버튼*/
+  .contact_section .form_box .send_btn {
+    margin: 36px 0;
+    text-align: right;
+  }
+
+  .contact_section .form_box .send_btn button {
+    font-size: 12px;
+    color: #fff;
+    background: #000;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    border: 0;
+    cursor: pointer;
+  }
+}
